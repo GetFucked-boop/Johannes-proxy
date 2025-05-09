@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Johanes Proxy</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #111;
+      color: white;
+    }
+
+    input {
+      padding: 10px;
+      width: 300px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #1e90ff;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Johanes Proxy</h1>
+  <p>Enter a URL to visit:</p>
+  <input id="url" type="text" placeholder="https://example.com" />
+  <button onclick="go()">Go</button>
+
+  <script>
+    function go() {
+      const url = document.getElementById("url").value;
+      const encoded = btoa(url); // base64 encode
+      window.location.href = `/proxy/ws/${encoded}`; // change this path to match your setup
+    }
+  </script>
+</body>
+</html>
